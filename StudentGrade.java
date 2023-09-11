@@ -17,26 +17,26 @@ public class StudentGrade {
         
         percentage=(totalMarks/(count*100))*100;
         System.out.println("Percentage: "+percentage);
-        
-        if (percentage<=100 && percentage>=81)
-        {
-        	System.out.println("Grade A++");
-        }
-        else if (percentage<=80 && percentage>=61)
-        {
-        	System.out.println("Grade A");
-        }
-        else if (percentage<=60 && percentage>=51)
-        {
-        	System.out.println("Grade B");
-        }
-        else if (percentage<=50 && percentage>=35)
-        {
-        	System.out.println("Grade C");
-        }
-        else
-        {
-        	System.out.println("Fail");
+
+        switch((int)percentage/10) {
+        case 9:
+            System.out.println("Grade O");
+            break;
+        case 8:
+         	System.out.println("Grade A+");
+            break;
+        case 7:
+            System.out.println("Grade A");
+            break;
+        case 6: case 5:
+            System.out.println("Grade B");
+            break;
+        case 4:
+            System.out.println("Grade C");
+            break;
+        default:
+            System.out.println("Fail");
+            break;
         }
     }
 }
